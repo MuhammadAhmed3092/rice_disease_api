@@ -21,7 +21,8 @@ transform = transforms.Compose([
 
 # --- Load Model ---
 model = timm.create_model('mobilevit_s', pretrained=False, num_classes=NUM_CLASSES)
-model.load_state_dict(torch.load("mobilevit_best_model.pth", map_location=device))
+# model.load_state_dict(torch.load("mobilevit_best_model.pth", map_location=device))
+model.load_state_dict(torch.load("mobilevit_best_model.pth", map_location=device, weights_only=True))
 model = model.to(device)
 model.eval()
 
@@ -29,14 +30,14 @@ model.eval()
 class_names = [
     "Bacterial Leaf Blight",
     "Brown Spot",
-    "Leaf Smut",
-    "Tungro",
-    "Sheath Blight",
-    "Narrow Brown Spot",
-    "Blast",
-    "False Smut",
     "Healthy",
-    "Other"
+    "Leaf Blast"
+    "Leaf Scald",
+    "Narrow Brown Spot",
+    "Neck Blast",
+    "Rice Hispa",
+    "Sheath Blight",
+    "Tungro"
 ]
 
 # --- FastAPI app ---
