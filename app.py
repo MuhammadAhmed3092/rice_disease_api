@@ -31,7 +31,7 @@ class_names = [
     "Bacterial Leaf Blight",
     "Brown Spot",
     "Healthy",
-    "Leaf Blast"
+    "Leaf Blast",
     "Leaf Scald",
     "Narrow Brown Spot",
     "Neck Blast",
